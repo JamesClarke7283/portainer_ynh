@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ "$architecture" == "amd64" ] && image=portainer/portainer:1.23.0
+[ "$architecture" == "amd64" ] && image=portainer/portainer:latest
 [ "$architecture" == "i386" ]  && image=portainer/portainer:linux-386-1.23.0
 [ "$architecture" == "armhf" ] && image=portainer/portainer:linux-arm-1.23.0
 [ -z $image ] && ynh_die "Sorry, your $architecture architecture is not supported ..."
