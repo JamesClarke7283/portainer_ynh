@@ -1,10 +1,10 @@
 #!/bin/bash
 
-[ "$architecture" == "amd64" ] && image=portainer/portainer:latest
-[ "$architecture" == "arm/v7" ]  && image=portainer/portainer:latest
-[ "$architecture" == "arm64" ] && image=portainer/portainer:latest
-[ "$architecture" == "ppc64le" ] && image=portainer/portainer:latest
-[ "$architecture" == "s390x" ] && image=portainer/portainer:latest
+[ "$architecture" == "amd64" ] && image=portainer/portainer-ce:latest
+[ "$architecture" == "arm/v7" ]  && image=portainer/portainer-ce:latest
+[ "$architecture" == "arm64" ] && image=portainer/portainer-ce:latest
+[ "$architecture" == "ppc64le" ] && image=portainer/portainer-ce:latest
+[ "$architecture" == "s390x" ] && image=portainer/portainer-ce:latest
 
 [ -z $image ] && ynh_die "Sorry, your $architecture architecture is not supported ..."
 
