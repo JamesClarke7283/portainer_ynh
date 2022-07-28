@@ -8,7 +8,7 @@
 
 [ -z $image ] && ynh_die "Sorry, your $architecture architecture is not supported ..."
 
-options="-e VIRTUAL_HOST=*  -p $port:9000 -v $data_path/data:/data -v /var/run/docker.sock:/var/run/docker.sock"
+options="-e VIRTUAL_HOST=$YNH_APP_ARG_DOMAIN  -p $port:9000 -v $data_path/data:/data -v /var/run/docker.sock:/var/run/docker.sock"
 containeroptions=""
 
 iptables -t filter -N DOCKER 
