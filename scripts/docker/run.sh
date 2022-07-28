@@ -1,12 +1,15 @@
 #!/bin/bash
 
 [ "$architecture" == "amd64" ] && image=portainer/portainer:latest
-[ "$architecture" == "i386" ]  && image=portainer/portainer:linux-386-1.23.0
-[ "$architecture" == "armhf" ] && image=portainer/portainer:linux-arm-1.23.0
+[ "$architecture" == "arm/v7" ]  && image=portainer/portainer:latest
+[ "$architecture" == "arm64" ] && image=portainer/portainer:latest
+[ "$architecture" == "ppc64le" ] && image=portainer/portainer:latest
+[ "$architecture" == "s390x" ] && image=portainer/portainer:latest
+
 [ -z $image ] && ynh_die "Sorry, your $architecture architecture is not supported ..."
 
 options="-p $port:9000 -v $data_path/data:/data -v /var/run/docker.sock:/var/run/docker.sock"
-containeroptions="--no-auth"
+containeroptions=""
 
 iptables -t filter -N DOCKER 
 
